@@ -1,0 +1,15 @@
+model ITCandidate {
+    id             String   @id @default(uuid())
+    name           String
+    email          String   @unique
+    office         String
+    cell           String
+    uf             String
+    city           String
+    linkedin       String
+    curriculumLink String?
+    portfolio      String
+    created_at     DateTime @default(now())
+
+    @@map("it_candidate")
+}

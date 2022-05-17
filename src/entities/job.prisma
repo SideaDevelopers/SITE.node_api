@@ -1,0 +1,12 @@
+model Job {
+    id              String   @id @default(uuid())
+    department      String
+    occupation_area String
+    title           String
+    describe        String
+    active          Boolean  @default(true)
+    limit_date      DateTime
+    created_at      DateTime @default(now())
+
+    @@map("jobs")
+}

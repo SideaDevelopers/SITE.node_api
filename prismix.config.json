@@ -1,0 +1,16 @@
+{
+    "mixers": [
+      {
+          "input": [
+              "base.prisma",
+              "./src/entities/notice.prisma",
+              "./src/entities/job.prisma",
+              "./src/entities/newsletter.prisma",
+              "./src/entities/user.prisma",
+              "./src/entities/candidate.prisma",
+              "./src/entities/ITCandidate.prisma"
+          ],
+          "output": "prisma/schema.prisma"
+      }
+    ]
+  }

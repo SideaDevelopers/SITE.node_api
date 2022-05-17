@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.newsletterRouter = void 0;
+const express_1 = require("express");
+const deleteNewsLetter_1 = require("../controllers/newsletter/deleteNewsLetter");
+const getallNewsLetter_1 = require("../controllers/newsletter/getallNewsLetter");
+const postNewsLetter_1 = require("../controllers/newsletter/postNewsLetter");
+const ensureAuthenticated_1 = require("../middlewares/ensureAuthenticated");
+const newsletterRouter = (0, express_1.Router)();
+exports.newsletterRouter = newsletterRouter;
+const postNewsLetter = new postNewsLetter_1.PostNewsLetter();
+const getallNewsLetter = new getallNewsLetter_1.GetAllNewsLetter();
+const deleteNewsLetter = new deleteNewsLetter_1.DeleteNewsLetterController();
+newsletterRouter.post("/api/newsletter/post", postNewsLetter.handle);
+newsletterRouter.get("/api/newsletter/getall", ensureAuthenticated_1.ensureAuthenticated, getallNewsLetter.handle);
+newsletterRouter.delete("/api/newsletter/delete/:id", ensureAuthenticated_1.ensureAuthenticated, deleteNewsLetter.handle);

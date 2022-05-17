@@ -1,0 +1,217 @@
+
+# Sidea WebSite API
+
+This project is an API, wich contains all services needed to make the WebSite work.
+
+## Funcionalities
+
+- News registration and visualization
+- Jobs registration and visualization
+- Bearer Authentication and validation
+- File upload and download
+
+## Instalation
+
+To install the project is very sample, all you need to do is clone this repository and run the project.
+## Technologies
+
+- .NET 6
+- Entity Framework ( with postgress connection ) - 6.0.3
+- MimeKit - 3.2.0
+- AWSSDK.S3 - 3.7.8.19
+- AWSSDK.Extensions.NETCore.Setup (3.7.2)
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`bearerKeyTokenSite`
+
+`siteS3BucketName`
+
+`awsAccessKey`
+
+`awsSecretKey`
+
+`siteBdConnectionString`
+
+
+# API Reference
+
+## User
+#### Get all users
+
+```http
+  GET /api/Auth/getall
+```
+
+#### Create user
+
+```http
+  POST /api/Auth/criar
+```
+
+#### Delete user
+
+```http
+  DELETE /api/Auth/delete/{id}
+```
+
+#### Login
+
+```http
+  POST /api/Auth/login
+```
+
+## Candidates
+#### Get all candidates
+
+```http
+  GET /api/Candidatos/getall
+```
+
+#### Create candidate
+
+```http
+  POST /api/Candidatos/post
+```
+
+#### Delete candidate
+
+```http
+  DELETE /api/Candidatos/delete/{id}
+```
+
+#### Get candidate by id
+
+```http
+  POST /api/Candidatos/getById/{id}
+```
+
+## TI Candidates
+#### Get all candidates
+
+```http
+  GET /api/CandidatoTI/getall
+```
+
+#### Create candidate
+
+```http
+  POST /api/CandidatoTI/adicionar
+```
+
+#### Delete candidate
+
+```http
+  DELETE /api/CandidatoTI/delete/{id}
+```
+
+#### Get candidate by id
+
+```http
+  POST /api/CandidatoTI/getById/{id}
+```
+
+## Curriculum
+
+#### Upload
+
+```http
+  POST /api/Curriculum/upload/{candidateId}
+```
+
+#### Download
+
+```http
+  GET /api/Curriculum/download/{candidateId}
+```
+
+#### Download
+
+```http
+  DELETE /api/Curriculum/delete/{candidateId}
+```
+
+## NewsLetter
+
+### List
+
+```http
+  GET /api/NewsLetter/getall
+```
+
+### Register
+
+```http
+  POST /api/NewsLetter/post
+```
+
+### Delete
+
+```http
+  DELETE /api/NewsLetter/del/{id}
+```
+
+## Notice
+
+### List notice's
+
+```http
+  GET /api/NoticeCard/getall
+```
+
+### Add notice
+
+```http
+  POST /api/NoticeCard/post
+```
+
+### Delete notice
+
+```http
+  DELETE /api/NoticeCard/delete/{id}
+```
+
+### Change notice
+
+```http
+  PUT /api/NoticeCard/alterar/{id}
+```
+
+### Get notice by id
+
+```http
+  GET /api/NoticeCard/getById/{id}
+```
+
+## Job's
+
+### Job's notice's
+
+```http
+  GET /api/vagas/getall
+```
+
+### Add Job's
+
+```http
+  POST /api/vagas/cadastrar
+```
+
+### Delete Job's
+
+```http
+  DELETE /api/vagas/delete/{id}
+```
+
+### Change Job's
+
+```http
+  PUT /api/vagas/alterar/{id}
+```
+
+### Get Job's by id
+
+```http
+  GET /api/vagas/getById/{id}
+```

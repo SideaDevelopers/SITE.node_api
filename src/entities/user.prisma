@@ -1,0 +1,7 @@
+model AuthUser {
+    id       String @id @default(uuid())
+    email    String @unique
+    password String
+
+    @@map("auth_user")
+}
